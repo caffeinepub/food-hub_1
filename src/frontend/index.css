@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    
+    /* Appetizing palette - warm, inviting */
+    --background: 0.98 0.01 60;
+    --foreground: 0.2 0.02 30;
+    --card: 1 0.005 60;
+    --card-foreground: 0.2 0.02 30;
+    --popover: 1 0.005 60;
+    --popover-foreground: 0.2 0.02 30;
+    
+    /* Tomato red - appetite stimulation */
+    --primary: 0.58 0.22 25;
+    --primary-foreground: 0.98 0.01 60;
+    
+    /* Peach/warm secondary */
+    --secondary: 0.88 0.08 55;
+    --secondary-foreground: 0.25 0.02 30;
+    
+    /* Muted warm gray */
+    --muted: 0.94 0.01 60;
+    --muted-foreground: 0.5 0.02 30;
+    
+    /* Golden yellow accent */
+    --accent: 0.82 0.15 85;
+    --accent-foreground: 0.25 0.02 30;
+    
+    /* Fresh green success */
+    --success: 0.65 0.18 145;
+    --success-foreground: 0.98 0.01 60;
+    
+    /* Warm warning */
+    --warning: 0.75 0.16 70;
+    --warning-foreground: 0.25 0.02 30;
+    
+    /* Destructive red */
+    --destructive: 0.55 0.24 20;
+    --destructive-foreground: 0.98 0.01 60;
+    
+    --border: 0.9 0.01 60;
+    --input: 0.92 0.01 60;
+    --ring: 0.58 0.22 25;
+    
+    --chart-1: 0.58 0.22 25;
+    --chart-2: 0.82 0.15 85;
+    --chart-3: 0.65 0.18 145;
+    --chart-4: 0.75 0.16 70;
+    --chart-5: 0.88 0.08 55;
+  }
+
+  .dark {
+    /* Dark mode - cozy evening dining */
+    --background: 0.18 0.02 30;
+    --foreground: 0.95 0.01 60;
+    --card: 0.22 0.02 30;
+    --card-foreground: 0.95 0.01 60;
+    --popover: 0.22 0.02 30;
+    --popover-foreground: 0.95 0.01 60;
+    
+    /* Brighter tomato for dark mode */
+    --primary: 0.65 0.22 25;
+    --primary-foreground: 0.98 0.01 60;
+    
+    --secondary: 0.28 0.03 35;
+    --secondary-foreground: 0.95 0.01 60;
+    
+    --muted: 0.28 0.02 30;
+    --muted-foreground: 0.65 0.02 30;
+    
+    /* Golden accent pops in dark */
+    --accent: 0.78 0.15 85;
+    --accent-foreground: 0.2 0.02 30;
+    
+    --success: 0.68 0.18 145;
+    --success-foreground: 0.98 0.01 60;
+    
+    --warning: 0.75 0.16 70;
+    --warning-foreground: 0.2 0.02 30;
+    
+    --destructive: 0.6 0.24 20;
+    --destructive-foreground: 0.98 0.01 60;
+    
+    --border: 0.3 0.02 30;
+    --input: 0.32 0.02 30;
+    --ring: 0.65 0.22 25;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Staggered animation utilities */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+  
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+  }
+}
